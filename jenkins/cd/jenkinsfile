@@ -1,0 +1,24 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Stop Existing Container') {
+            steps {
+                sh '''
+                    if [ -n "$(docker ps -aq --filter "name=^jenkins-practice-demo$")" ]; then
+                        docker stop jenkins-practice-demo
+                        docker rm jenkins-practice-demo
+                    else
+                        echo "No existing jenkins-practice-demo container found."
+                    fi
+                '''
+            }
+        }
+
+        stage('Start Container on Port 8082') {
+            steps {
+                sh 'docker run -d --name jenkins-practice-demo -p 8082:80 my-image:latest'
+            }
+        }
+    }
+}
