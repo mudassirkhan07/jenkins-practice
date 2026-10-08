@@ -124,12 +124,10 @@ To redeploy after editing `index.html`: push, run CI, then run CD.
 - A green build does not mean the pipeline did anything, so read the console output.
 - Jenkins only sees what is on GitHub, not what is on your computer.
 - Small configuration details cause most CI/CD problems.
+- <img width="1200" height="627" alt="1-architecture" src="https://github.com/user-attachments/assets/a50c1db5-58dc-46b8-b1ad-00e866bbb432" />
 
 ## Next steps
 
 - Trigger builds automatically on every push
 - Push images to a registry such as Docker Hub
 - Chain the CD job to run after CI succeeds
-- <img width="1200" height="627" alt="1-architecture" src="https://github.com/user-attachments/assets/a50c1db5-58dc-46b8-b1ad-00e866bbb432" />
-
-
