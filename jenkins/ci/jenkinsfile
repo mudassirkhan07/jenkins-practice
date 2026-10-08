@@ -1,0 +1,17 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Git Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Docker Image Build') {
+            steps {
+                sh 'docker build -t my-image:latest .'
+            }
+        }
+    }
+}
